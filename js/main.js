@@ -28,3 +28,9 @@ Pattern.defineRules([
 	'task qualifier date qualifier time',
 	'task'
 ])
+
+$('#top input').on('keypress', function(e) {
+	if (e.which == 13) {
+		Pattern.match($(this).val())
+	}
+})
