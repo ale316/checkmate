@@ -43,5 +43,14 @@ body {
   padding: 0;
 }
 #container #content ul li {
+  position: relative;
   margin-bottom: 15px;
+}
+#container #content ul li .time {
+  color: #2ABB9B;
+  text-align: right;
+  position: absolute;
+  top: 0;
+  left: -75px;
+  width: 60px;
 }

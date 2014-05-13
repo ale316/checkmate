@@ -48,10 +48,17 @@ Pattern.defineRules([
 
 var displayMatch = function(match) {
 	var match = match.toObject(),
-		$taskList = $('#content ul')
+		$taskList = $('#content ul'),
+		$elem = $(document.createElement('li'))
+
 	if(match.task) {
-		$taskList.append('<li>'+match.task+'</li>')
+		$elem.append('<p class="task">'+match.task+'</p>')
 	}
+	if(match.time) {
+		$elem.append('<span class="time">'+match.time+'</span>')
+	}
+
+	$taskList.append($elem)
 
 }
 
@@ -66,6 +73,12 @@ var displayMatches = function(matches) {
 	displayMatch(bestGuess)
 }
 
+$.fn.exchangePositionWith = function(selector) {
+    var other = $(selector);
+    this.after(other.clone());
+    other.after(this).remove();
+}
+
 $('#pattern').on('keydown', function(e) {
 	var keyCode = e.keyCode || e.which
 	if (keyCode == 13) {
@@ -77,3 +90,7 @@ $('#pattern').on('keydown', function(e) {
 		e.preventDefault()
 	} 
 })
+
+displayMatches(Pattern.match('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum by 9pm'))
+displayMatches(Pattern.match('Do security homework at 11pm'))
+
