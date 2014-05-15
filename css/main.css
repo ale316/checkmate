@@ -49,6 +49,7 @@ body {
 #container #content ul li .time {
   color: #2ABB9B;
   text-align: right;
+  font-weight: bold;
   position: absolute;
   top: 0;
   left: -75px;
