@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title>Checkmate</title>
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<script type="text/javascript" src="js/lib/jquery.min.js"></script>
+	<script type="text/javascript" src="js/lib/date.js"></script>
+	<script type="text/javascript" src="js/lib/pattern.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="top">
+			<div contenteditable="true" id="pattern"></div>
+		</div>
+		<div id="content">
+			<h2>Today</h2>
+			<ul ng-controller="Task">
+				<li ng-repeat="task in tasks">
+					<p class="task">{{ task.body }}</p>
+					<span class="time">{{ task.time }}</span>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

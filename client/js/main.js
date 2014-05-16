@@ -63,6 +63,7 @@ var displayMatch = function(match) {
 }
 
 var displayMatches = function(matches) {
+	console.log(matches)
 	var bestGuess = { depth: 0 },
 		$taskList = $('#content ul')
 	$.each(matches, function(id, match) {
