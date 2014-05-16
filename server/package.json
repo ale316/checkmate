@@ -1,0 +1,17 @@
+{
+	"name": "checkmate",
+	"description": "Checkmate's backend.",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"express": "4.0.x",
+		"body-parser": "*",
+		"errorhandler": "*",
+		"morgan": "*",
+		"multer": "*",
+		"compression": "*",
+		"async": "*",
+		"mongoose": "3.8.x",
+		"moment": "*"
+	}
+}
