@@ -8,22 +8,18 @@
 	<script type="text/javascript" src="/public/js/lib/angular.min.js"></script>
 	<script type="text/javascript" src="/public/js/lib/date.js"></script>
 	<script type="text/javascript" src="/public/js/lib/pattern.js"></script>
-	<script type="text/javascript">
-		function Task($scope) {
-			$scope.tasks=[{body:"asdasd",time:"2pm"},{body:"asdsdfdgrttjkd",time:"3pm"}]
-		}
-	</script>
+
 </head>
 <body>
-	<div id="container">
+	<div id="container" ng-controller="Task">
 		<div id="top">
-			<div contenteditable="true" id="pattern"></div>
+			<div contenteditable="true" id="pattern" ng-keydown="enterTask($event)" ></div>
 		</div>
 		<div id="content">
 			<h2>Today</h2>
-			<ul ng-controller="Task">
+			<ul>
 				<li ng-repeat="task in tasks">
-					<p class="task">{{ task.body }}</p>
+					<p class="task">{{ task.task }}</p>
 					<span class="time">{{ task.time }}</span>
 				</li>
 			</ul>
