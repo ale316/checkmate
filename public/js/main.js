@@ -1,10 +1,11 @@
 Pattern.defineEntities([ 
 	{ 
 		name:'task', 
-		definition: function(word) { 
+		/*definition: function(word) { 
 			if(typeof word == 'string' || word instanceof String) return word;
 			else return false;
-		} 
+		} */
+		definition: /.*/
 	}, 
 	{ 
 		name:'date', 
