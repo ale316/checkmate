@@ -2,6 +2,9 @@ var express  = require('express'),
 	mongoose = require('mongoose'),
 	http	 = require('http')
 
+// Database connection
+mongoose.connect("mongodb://localhost/checkmate")
+
 var app = express()
 
 app.use('/public',express.static(__dirname + '/public/'))
